@@ -20,7 +20,7 @@ public class Estudante {
     private int idade;
 
     private static void idadeValida(int idade){
-        if(idade >= 18){
+        if(idade < 18){
             throw new IllegalArgumentException("Idade invalida");
         }
     }
@@ -52,6 +52,23 @@ public class Estudante {
         return estudante;
     }
 
+    public static Estudante create(String identificaoInterna, String nome, int idade, String email) throws IllegalArgumentException{
+        if(nome == null || email == null){
+            throw new IllegalArgumentException("Nome ou Email invalido");
+        }
+
+        enderecoEmailValido(email);
+        idadeValida(idade);
+
+        Estudante estudante = new Estudante();
+        estudante.setNome(nome);
+        estudante.setIdade(idade);
+        estudante.setEmail(email);
+        estudante.setIdentificacaoInterna(identificaoInterna);
+
+        return estudante;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -64,5 +81,9 @@ public class Estudante {
     public void setIdade(int idade) {
         idadeValida(idade);
         this.idade = idade;
+    }
+
+    public void setIdentificacaoInterna(String identificacaoInterna) {
+        this.identificacaoInterna = identificacaoInterna;
     }
 }

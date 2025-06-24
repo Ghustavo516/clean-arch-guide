@@ -64,6 +64,28 @@
 			<artifactId>commons-validator</artifactId>
 			<version>1.7</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.11.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Engine para rodar os testes -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.11.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.7.0</version> <!-- Verifique se há versão mais recente -->
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
